@@ -72,7 +72,7 @@ function SpeakersCard() {
               className="h-16 w-16 shrink-0 rounded-full border-2 border-amber-400 object-cover"
             />
             <div className="min-w-0">
-              <p className="font-lora text-sm font-bold uppercase tracking-wide text-navy">
+              <p className="whitespace-nowrap font-lora text-sm font-bold uppercase tracking-tight text-navy">
                 {speaker.name}
               </p>
               <ul className="mt-2 flex items-center gap-3">
