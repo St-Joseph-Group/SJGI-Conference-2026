@@ -39,6 +39,7 @@ const SPEAKERS: Speaker[] = [
     name: 'Maulik Parekh',
     photo: speakerParekh,
     links: [
+      { platform: 'linkedin', href: 'https://www.linkedin.com/in/iammaulikparekh' },
       { platform: 'facebook', href: 'https://www.facebook.com/iammaulikparekh' },
       { platform: 'spotify', href: 'https://open.spotify.com/show/2PVoiC64mXIoFURvculvjj' },
     ],
