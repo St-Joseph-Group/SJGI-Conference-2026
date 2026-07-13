@@ -1,10 +1,23 @@
-import { Mic, ExternalLink } from 'lucide-react'
+import { Mic } from 'lucide-react'
 import speakerManlapaz from '../assets/speaker-manlapaz.jpg'
 import speakerParekh from '../assets/speaker-parekh.jpg'
 import speakerGogna from '../assets/speaker-gogna.jpg'
+import logoFacebook from '../assets/logo-facebook.png'
+import logoLinkedin from '../assets/logo-linkedin.png'
+import logoSpotify from '../assets/logo-spotify.png'
+import logoYoutube from '../assets/logo-youtube.png'
+
+type Platform = 'linkedin' | 'facebook' | 'spotify' | 'youtube'
+
+const PLATFORMS: Record<Platform, { logo: string; label: string }> = {
+  linkedin: { logo: logoLinkedin, label: 'LinkedIn' },
+  facebook: { logo: logoFacebook, label: 'Facebook' },
+  spotify: { logo: logoSpotify, label: 'Spotify' },
+  youtube: { logo: logoYoutube, label: 'YouTube' },
+}
 
 type SpeakerLink = {
-  label: string
+  platform: Platform
   href: string
 }
 
@@ -19,38 +32,23 @@ const SPEAKERS: Speaker[] = [
     name: 'Christian Manlapaz',
     photo: speakerManlapaz,
     links: [
-      {
-        label: 'linkedin.com/in/cris-manlapaz',
-        href: 'https://www.linkedin.com/in/cris-manlapaz',
-      },
+      { platform: 'linkedin', href: 'https://www.linkedin.com/in/cris-manlapaz' },
     ],
   },
   {
     name: 'Maulik Parekh',
     photo: speakerParekh,
     links: [
-      {
-        label: 'facebook.com/iammaulikparekh',
-        href: 'https://www.facebook.com/iammaulikparekh',
-      },
-      {
-        label: 'Spotify show',
-        href: 'https://open.spotify.com/show/2PVoiC64mXIoFURvculvjj',
-      },
+      { platform: 'facebook', href: 'https://www.facebook.com/iammaulikparekh' },
+      { platform: 'spotify', href: 'https://open.spotify.com/show/2PVoiC64mXIoFURvculvjj' },
     ],
   },
   {
     name: 'Arun Gogna',
     photo: speakerGogna,
     links: [
-      {
-        label: 'facebook.com/gognaarun',
-        href: 'https://www.facebook.com/gognaarun',
-      },
-      {
-        label: 'youtube.com/@gognaarun',
-        href: 'https://www.youtube.com/@gognaarun',
-      },
+      { platform: 'facebook', href: 'https://www.facebook.com/gognaarun' },
+      { platform: 'youtube', href: 'https://www.youtube.com/@gognaarun' },
     ],
   },
 ]
@@ -77,23 +75,28 @@ function SpeakersCard() {
               <p className="font-lora text-sm font-bold uppercase tracking-wide text-navy">
                 {speaker.name}
               </p>
-              <ul className="mt-1 flex flex-col gap-1">
-                {speaker.links.map((link) => (
-                  <li key={link.href}>
-                    <a
-                      href={link.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex min-h-11 items-center gap-1.5 break-all text-xs font-medium text-blue-700 underline"
-                    >
-                      <ExternalLink
-                        className="h-3.5 w-3.5 shrink-0"
-                        aria-hidden="true"
-                      />
-                      {link.label}
-                    </a>
-                  </li>
-                ))}
+              <ul className="mt-2 flex items-center gap-3">
+                {speaker.links.map((link) => {
+                  const { logo, label } = PLATFORMS[link.platform]
+                  return (
+                    <li key={link.href}>
+                      <a
+                        href={link.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`${speaker.name} on ${label}`}
+                        title={label}
+                        className="inline-flex items-center justify-center rounded-md transition hover:scale-110"
+                      >
+                        <img
+                          src={logo}
+                          alt={label}
+                          className="h-8 w-8 object-contain"
+                        />
+                      </a>
+                    </li>
+                  )
+                })}
               </ul>
             </div>
           </li>
