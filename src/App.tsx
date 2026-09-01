@@ -1,7 +1,7 @@
 import RegistrationCard from './components/RegistrationCard'
 import SpeakersCard from './components/SpeakersCard'
 import DressCodeCard from './components/DressCodeCard'
-import mobileBg from './assets/mobile-bg.png'
+import mobileBg from './assets/mobile-bg.jpg'
 import desktopBg from './assets/desktop-bg.jpg'
 
 function App() {
@@ -27,7 +27,7 @@ function App() {
             SJ Group of Companies
           </h1>
           <h2 className="mt-1 font-lora font-bold uppercase tracking-wide text-navy drop-shadow-sm text-[clamp(1.5rem,5vw,3.25rem)] leading-tight">
-            2026 Conference
+            Economic Briefing 2026
           </h2>
         </header>
 

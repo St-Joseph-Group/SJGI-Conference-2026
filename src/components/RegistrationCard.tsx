@@ -1,7 +1,7 @@
 import { ClipboardCheck } from 'lucide-react'
 import qrCode from '../assets/qr-code.png'
 
-const REGISTRATION_URL = 'https://forms.cloud.microsoft/r/jzDSJCE3Cx'
+const REGISTRATION_URL = 'https://forms.cloud.microsoft/r/HpxisStZGc'
 
 function RegistrationCard() {
   return (
@@ -32,7 +32,7 @@ function RegistrationCard() {
         rel="noopener noreferrer"
         className="mt-4 inline-flex min-h-11 items-center rounded-md border-2 border-blue-900 bg-blue-700 px-5 py-2 text-sm font-bold uppercase tracking-wide text-white shadow transition hover:bg-blue-800"
       >
-        Scan to Register
+        CLICK TO REGISTER
       </a>
     </div>
   )

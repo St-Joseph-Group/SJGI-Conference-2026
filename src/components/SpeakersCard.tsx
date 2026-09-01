@@ -1,7 +1,5 @@
 import { Mic } from 'lucide-react'
-import speakerManlapaz from '../assets/speaker-manlapaz.jpg'
-import speakerParekh from '../assets/speaker-parekh.jpg'
-import speakerGogna from '../assets/speaker-gogna.jpg'
+import speakerBalbieran from '../assets/speaker-balbieran.jpg'
 import logoFacebook from '../assets/logo-facebook.png'
 import logoLinkedin from '../assets/logo-linkedin.png'
 import logoSpotify from '../assets/logo-spotify.png'
@@ -29,27 +27,10 @@ type Speaker = {
 
 const SPEAKERS: Speaker[] = [
   {
-    name: 'Christian Manlapaz',
-    photo: speakerManlapaz,
+    name: 'Ronilo Balbieran',
+    photo: speakerBalbieran,
     links: [
-      { platform: 'linkedin', href: 'https://www.linkedin.com/in/cris-manlapaz' },
-    ],
-  },
-  {
-    name: 'Maulik Parekh',
-    photo: speakerParekh,
-    links: [
-      { platform: 'linkedin', href: 'https://www.linkedin.com/in/iammaulikparekh' },
-      { platform: 'facebook', href: 'https://www.facebook.com/iammaulikparekh' },
-      { platform: 'spotify', href: 'https://open.spotify.com/show/2PVoiC64mXIoFURvculvjj' },
-    ],
-  },
-  {
-    name: 'Arun Gogna',
-    photo: speakerGogna,
-    links: [
-      { platform: 'facebook', href: 'https://www.facebook.com/gognaarun' },
-      { platform: 'youtube', href: 'https://www.youtube.com/@gognaarun' },
+      { platform: 'linkedin', href: 'https://www.linkedin.com/in/ronilobalbieran/' },
     ],
   },
 ]
